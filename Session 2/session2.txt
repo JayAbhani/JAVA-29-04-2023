@@ -1,0 +1,35 @@
+Taking Input
+--------------------------------------
+// integer
+// scn.nextInt()
+// Integer.parseInt(scn.nextLine());
+
+// string
+// scn.next()
+// scn.nextLine()
+
+Loops
+-----------------------------------
+    while
+    do_while
+    for
+
+    break
+    continue
+
+Type Casting
+    widening (implicit) casting
+        automatic
+        smaller data type -> larger data type
+        byte -> short -> int -> long -> float -> double
+
+
+    narrowing (explicit) casting
+        explicit
+        larger data type -> smaller data type
+        data loss if value being converted is outside the range of saller data type
+
+    num.getClass().getName()
+
+Command Line Arguments
+    file names, configuration parameters or input data

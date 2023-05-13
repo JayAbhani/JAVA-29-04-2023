@@ -1,0 +1,82 @@
+What is Java
+-----------------------------
+backend dev 
+(spring/spring boot) (web apps)
+(kotlin) (android apps)
+
+Environment Setup
+---------------------------------
+    install jdk
+    install vscode
+    install "extension pack for java" in vscode
+
+Running a Java Program
+----------------------------------
+
+Writing and Executing Your Program
+-----------------------------------------
+    java -version
+    javac Main.java
+    java Main
+
+Anatomy of First Java Program
+-------------------------------------
+
+How to Print in Java
+-----------------------------
+System.out.print("message");        //content
+System.out.println("message");      //content + new line
+
+Comments in Java
+--------------------------
+
+
+Variables and Data Types
+-------------------------------
+    byte, short, int, long, float, double, boolean and char
+    https://simplesnippets.tech/java-variables-and-data-types-with-program-example/
+
+    declaration
+    initialization
+    assignment
+
+Operators
+--------------------
+    arithmetic
+        +, -, *, /, %
+    assignment
+        =, +=, -=, *=, /=, i++, ++i, i--, --i
+    relational
+        >, >=, <, <=, ==, !=
+            returns boolean
+            5 > 3   //true
+    logical
+        AND, OR, NOT
+            works on boolean
+            returns boolean
+
+Methods / Functions
+------------------------------
+
+Conditional Statements
+-----------------------------
+    if
+    if_else
+    if_else if
+    switch
+    if_else nested
+    if_else chain
+
+
+
+Ternary Operator
+--------------------------------
+var x = (condition) ? (expression1) : (expression2);
+
+
+
+
+
+
+
+

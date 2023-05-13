@@ -1,0 +1,19 @@
+what is array
+    contiguous memory
+    objects
+    index
+    size
+        int or short
+    randomly access elements
+    fixed size
+
+one-dimensional array
+    decalartion
+    creating
+    initializing
+    accessing
+
+accessing elems outside the array size
+    ArrayIndexOutOfBoundException
+
+
