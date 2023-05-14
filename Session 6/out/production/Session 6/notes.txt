@@ -7,6 +7,8 @@ relation between class and objects
 how object is created
 
 what is a constructor? why do we need it?
+    to initialize object
+
     default constructor
     parameterized constructor
 
