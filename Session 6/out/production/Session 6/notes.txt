@@ -19,20 +19,25 @@ this
 
     why do we need this
 
+java packages
+
 access specifiers
     mainly for fields and methods
 
     default
+        same package
     public
+        inside package as well as outside package
     private
+        same class
     protected
+        same class and inherited class
 
 settter and getter
 
 static keyword
     mainly for fields and methods
 
-java packages
 
 
 

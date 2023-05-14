@@ -17,13 +17,13 @@ public class ConstructorTut {
         System.out.println(s1.age);
         System.out.println(s1.rollNo);
 
-        Student s2 = new Student();
-        s2.name = "sharan";
-        s2.age = 21;
-        s2.rollNo = 87;
-        System.out.println(s2.name);
-        System.out.println(s2.age);
-        System.out.println(s2.rollNo);
+//        Student s2 = new Student();
+//        s2.name = "sharan";
+//        s2.age = 21;
+//        s2.rollNo = 87;
+//        System.out.println(s2.name);
+//        System.out.println(s2.age);
+//        System.out.println(s2.rollNo);
     }
 }
 
@@ -38,10 +38,10 @@ class Student {
         rollNo = 0;
     }
 
-    public Student(String objName, int objAge, int objRollNo) {
-        name = objName;
-        age = objAge;
-        rollNo = objRollNo;
+    public Student(String name, int age, int rollNo) {
+        this.name = name;
+        this.age = age;
+        this.rollNo = rollNo;
     }
 
 
