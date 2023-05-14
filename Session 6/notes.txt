@@ -1,0 +1,38 @@
+Class and Objects
+------------------------------------
+class in java
+
+relation between class and objects
+
+how object is created
+
+what is a constructor? why do we need it?
+    default constructor
+    parameterized constructor
+
+    Does compiler always make a no-arg constructor even if the parameterized one is present?
+
+this
+    this is a reference variable that refers to the current object, in the constructor or other methods
+
+    why do we need this
+
+access specifiers
+    mainly for fields and methods
+
+    default
+    public
+    private
+    protected
+
+settter and getter
+
+static keyword
+    mainly for fields and methods
+
+java packages
+
+
+
+
+
