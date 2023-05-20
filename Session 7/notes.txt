@@ -1,0 +1,97 @@
+4 pillars of oops
+-----------------------------------------------------------------
+
+encapsulation
+--------------------------------------
+bundling data and methods together
+protecting data from direct access and providing controlled access through public methods
+
+code organization
+data hiding
+abstraction
+
+security
+maintainability
+
+
+inheritance
+-----------------------------------------
+new classes based on existing classes
+code reuse
+organization and structuring of related classes
+"is-a" relationship (derived class inherits properties and behavior of base class)
+modify existing and define unique
+
+
+
+polymorphism
+-----------------------------------------
+treating object of derived class as object of base class
+flexibility
+extensibility
+code reuse
+
+method overloading
+method overriding
+
+
+
+abstraction
+-------------------------------------------------
+creating a simplified and generalized view of an object or system
+identifying the essential features and behaviors of an object while hiding the unnecessary details
+
+abstract class
+interface
+
+modular and maintainable code, as it allows us to work with high-level concepts rather than dealing with low-level implementation details
+
+
+
+this vs super
+---------------------------------------------------
+    this keyword:
+        - The this keyword refers to the current object within a class. It is often used to access instance variables, invoke methods, or call constructors within the same class.
+        - It is particularly useful when there is a need to disambiguate between instance variables and method parameters or local variables that have the same name.
+        - In simple terms, this refers to "this object" or "the current instance" of the class.
+
+    super keyword:
+        - The super keyword is used to refer to the superclass or parent class within a subclass. It allows accessing superclass members (variables or methods) that may be overridden by the subclass.
+        - It is commonly used when we want to invoke a superclass constructor or access superclass methods or variables from the subclass.
+        - In simple terms, super refers to "the parent class" or "the superclass" of the current class.
+
+public class Vehicle {
+    private String brand;
+
+    public Vehicle(String brand) {
+        this.brand = brand;
+    }
+
+    public void honk() {
+        System.out.println("Honking the vehicle.");
+    }
+}
+
+public class Car extends Vehicle {
+    private int year;
+
+    public Car(String brand, int year) {
+        super(brand);
+        this.year = year;
+    }
+
+    public void displayInfo() {
+        System.out.println("Brand: " + super.brand);  // Using 'super' to access the superclass member
+        System.out.println("Year: " + this.year);     // Using 'this' to access the instance variable of the current class
+        super.honk();                                 // Using 'super' to invoke the superclass method
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota", 2021);
+        car.displayInfo();
+    }
+}
+
+
