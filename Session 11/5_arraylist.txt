@@ -1,0 +1,115 @@
+ArrayList
+-----------------------------------------
+The ArrayList class in the Java Collections Framework is an implementation of the List interface. It provides a dynamic array-like data structure that can dynamically grow or shrink in size as elements are added or removed. ArrayList allows duplicate elements and maintains the insertion order of elements. Let's explore the ArrayList class in detail:
+
+public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
+    // Constructors
+    public ArrayList();
+    public ArrayList(Collection<? extends E> c);
+    public ArrayList(int initialCapacity);
+
+    // Basic Operations
+    public boolean add(E e);
+    public void add(int index, E element);
+    public E get(int index);
+    public E set(int index, E element);
+    public E remove(int index);
+    public boolean remove(Object o);
+    public void clear();
+    public int size();
+    public boolean isEmpty();
+    public boolean contains(Object o);
+    public boolean containsAll(Collection<?> c);
+
+    // Bulk Operations
+    public boolean addAll(Collection<? extends E> c);
+    public boolean addAll(int index, Collection<? extends E> c);
+    public boolean removeAll(Collection<?> c);
+    public boolean retainAll(Collection<?> c);
+
+    // Conversion Operations
+    public Object[] toArray();
+    public <T> T[] toArray(T[] a);
+    public void trimToSize();
+
+    // Iteration and Streams
+    public Iterator<E> iterator();
+    public ListIterator<E> listIterator();
+    public ListIterator<E> listIterator(int index);
+    public Spliterator<E> spliterator();
+    public Stream<E> stream();
+    public Stream<E> parallelStream();
+}
+
+
+Constructors:
+
+ArrayList(): Creates an empty ArrayList with an initial capacity of 10.
+ArrayList(Collection<? extends E> c): Creates an ArrayList containing the elements of the specified collection, in the order they are returned by the collection's iterator.
+ArrayList(int initialCapacity): Creates an ArrayList with the specified initial capacity.
+
+Basic Operations:
+
+boolean add(E e): Appends the specified element to the end of the ArrayList.
+void add(int index, E element): Inserts the specified element at the specified position in the ArrayList, shifting the subsequent elements to the right.
+E get(int index): Returns the element at the specified index in the ArrayList.
+E set(int index, E element): Replaces the element at the specified index in the ArrayList with the specified element.
+E remove(int index): Removes and returns the element at the specified index in the ArrayList, shifting the subsequent elements to the left.
+boolean remove(Object o): Removes the first occurrence of the specified element from the ArrayList, if it exists.
+void clear(): Removes all elements from the ArrayList.
+int size(): Returns the number of elements in the ArrayList.
+boolean isEmpty(): Checks if the ArrayList is empty.
+boolean contains(Object o): Checks if the ArrayList contains the specified element.
+boolean containsAll(Collection<?> c): Checks if the ArrayList contains all the elements of the specified collection.
+Bulk Operations:
+
+boolean addAll(Collection<? extends E> c): Appends all the elements in the specified collection to the end of the ArrayList.
+boolean addAll(int index, Collection<? extends E> c): Inserts all the elements in the specified collection into the ArrayList at the specified position, shifting the subsequent elements to the right.
+boolean removeAll(Collection<?> c): Removes all the elements from the ArrayList that are present in the specified collection.
+boolean retainAll(Collection<?> c): Retains only the elements in the ArrayList that are present in the specified collection.
+Conversion Operations:
+
+Object[] toArray(): Returns an array containing all the elements of the ArrayList in the same order as they appear in the list.
+<T> T[] toArray(T[] a): Returns an array containing all the elements of the ArrayList in the same order as they appear in the list, using the specified array if it is large enough.
+void trimToSize(): Trims the capacity of the ArrayList to the current size.
+Iteration and Streams:
+
+Iterator<E> iterator(): Returns an iterator over the elements in the ArrayList.
+ListIterator<E> listIterator(): Returns a list iterator over the elements in the ArrayList.
+ListIterator<E> listIterator(int index): Returns a list iterator over the elements in the ArrayList, starting at the specified index.
+Spliterator<E> spliterator(): Creates a Spliterator over the elements in the ArrayList.
+Stream<E> stream(): Returns a sequential Stream over the elements in the ArrayList.
+Stream<E> parallelStream(): Returns a parallel Stream over the elements in the ArrayList.
+ArrayList provides efficient element access, insertion, and removal operations, especially when accessed by index. It dynamically grows or shrinks its internal array to accommodate elements as needed. However, inserting or removing elements in the middle of the list requires shifting subsequent elements, which can be less efficient compared to LinkedList.
+
+Here's an example demonstrating the usage of ArrayList:
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+
+        System.out.println("Size: " + names.size());  // Output: Size: 3
+        System.out.println("First Element: " + names.get(0));  // Output: First Element: Alice
+
+        names.add(1, "David");
+        System.out.println("Modified List: " + names);  // Output: Modified List: [Alice, David, Bob, Charlie]
+
+        names.remove("Bob");
+        System.out.println("After Removal: " + names);  // Output: After Removal: [Alice, David, Charlie]
+
+        boolean containsCharlie = names.contains("Charlie");
+        System.out.println("Contains 'Charlie': " + containsCharlie);  // Output: Contains 'Charlie': true
+    }
+}
+
+
+In this example, we create an ArrayList of names, perform various operations such as adding elements, accessing elements by index, modifying elements, removing elements, and checking for element existence.
+
+ArrayList provides a flexible and efficient way to store and manipulate dynamic collections of elements in Java.

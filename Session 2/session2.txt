@@ -31,5 +31,14 @@ Type Casting
 
     num.getClass().getName()
 
+    Student s = new Student();
+    s.getClass().getName();     //Student
+
+    int n = 5;
+    n.getClass().getName();     //int
+
 Command Line Arguments
     file names, configuration parameters or input data
+
+
+

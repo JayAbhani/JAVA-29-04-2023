@@ -1,0 +1,8 @@
+Question 1:
+Write a Java method that takes an ArrayList of integers as input and returns the sum of all the elements in the list.
+
+Question 2:
+Write a Java method that takes an ArrayList of strings as input and counts the number of strings that start with a specific prefix. The method should accept the ArrayList and the prefix as parameters and return the count of matching strings.
+
+Question 3:
+Write a Java method that takes an ArrayList of characters as input and removes all the vowels (a, e, i, o, u) from the list. The method should modify the original ArrayList and remove the vowels in-place.

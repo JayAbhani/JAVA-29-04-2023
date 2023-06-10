@@ -1,0 +1,71 @@
+generics
+------------------------------------
+
+Generics in Java is a powerful feature that allows you to define classes, interfaces, and methods that can operate on different types while providing type safety. It enables you to create reusable code that can work with different data types without sacrificing compile-time type checking. Let's explore generics in Java in detail:
+
+Introduction to Generics:
+
+Generics enable you to create classes, interfaces, and methods that are parameterized by one or more types.
+The type parameters are specified using angle brackets (< >) and can be any valid Java identifier.
+Generics provide compile-time type safety by allowing you to specify the expected types for variables, parameters, and return types.
+Generics allow you to write generic algorithms that can operate on different types without the need for explicit type casting.
+
+Generic Classes and Interfaces:
+
+Generic classes and interfaces are declared by specifying one or more type parameters within angle brackets.
+Type parameters can be used as placeholders for actual types that will be provided when creating instances of the generic class or implementing the generic interface.
+Example: class MyGenericClass<T> { ... }
+
+Using Generic Types:
+
+When creating an instance of a generic class, you provide the actual type arguments within the angle brackets.
+Example: MyGenericClass<Integer> myObj = new MyGenericClass<Integer>();
+You can also use the diamond operator (<>) to infer the type arguments from the context if they can be determined from the assignment or method invocation.
+Generic Methods:
+
+Generic methods allow you to define methods that can operate on different types.
+Type parameters are declared before the return type and can be used as placeholders for the types of method parameters or the return type.
+Example: public <T> void myGenericMethod(T parameter) { ... }
+Bounded Type Parameters:
+
+Bounded type parameters allow you to restrict the types that can be used as type arguments.
+You can specify upper bounds (extends) or lower bounds (super) for type parameters.
+Example: class MyGenericClass<T extends Number> { ... }
+Wildcards:
+
+Wildcards (?) allow you to work with unknown types in generic code.
+They can be used as type arguments, method parameters, or return types.
+Wildcards provide flexibility when you want to work with a group of related types without specifying the exact type.
+Example: public void myMethod(List<?> myList) { ... }
+Generics provide compile-time type safety and enable you to write reusable and flexible code. They help in reducing code duplication and provide better abstraction by allowing you to create generic algorithms and data structures that can work with different types. Generics are extensively used in Java collections, such as ArrayList, HashSet, and Map, to provide type-safe collections that can work with any type of data.
+
+Here's an example demonstrating the usage of generics in Java:
+
+class MyGenericClass<T> {
+    private T value;
+
+    public T getValue() {
+        return value;
+    }
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+}
+
+public class GenericsExample {
+    public static void main(String[] args) {
+        MyGenericClass<Integer> intObj = new MyGenericClass<>();
+        intObj.setValue(10);
+        System.out.println(intObj.getValue());  // Output: 10
+
+        MyGenericClass<String> stringObj = new MyGenericClass<>();
+        stringObj.setValue("Hello");
+        System.out.println(stringObj.getValue());  // Output: Hello
+    }
+}
+
+
+In this example, we create a generic class MyGenericClass that can hold a value of any type. We instantiate two objects of MyGenericClass with different type arguments (Integer and String) and demonstrate how to set and get values of different types using the same generic class.
+
+Generics provide a way to write flexible, reusable, and type-safe code in Java, allowing you to create classes, interfaces, and methods that can work with different types while ensuring type safety at compile time.
