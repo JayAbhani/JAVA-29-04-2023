@@ -1,0 +1,52 @@
+In Java, a functional interface is an interface that has only one abstract method. It is also known as a Single Abstract Method (SAM) interface. Functional interfaces serve as the basis for lambda expressions and method references, allowing functional programming concepts to be implemented in Java.
+
+Here are some key points about functional interfaces:
+
+Single Abstract Method (SAM):
+A functional interface should have exactly one abstract method, which is the primary method representing the behavior of the interface. It can also contain default methods or static methods, but only one abstract method.
+
+Purpose:
+The purpose of a functional interface is to define a contract for a specific type of behavior. It serves as a blueprint for lambda expressions and method references, enabling the use of functional programming concepts in Java.
+
+Usage with Lambda Expressions:
+Functional interfaces are primarily used in conjunction with lambda expressions. Lambda expressions provide a concise way to implement the abstract method of a functional interface. The lambda expression serves as an instance of the functional interface.
+
+Usage with Method References:
+Functional interfaces can also be used with method references, which are shorthand notations for invoking existing methods. Method references allow you to directly refer to a method by its name, serving as an implementation of the abstract method of the functional interface.
+
+Built-in Functional Interfaces:
+Java provides a set of predefined functional interfaces in the java.util.function package. These interfaces cover common functional programming scenarios, such as applying a function, consuming a value, predicating a condition, etc. Some examples include Predicate, Consumer, Function, Supplier, and UnaryOperator.
+
+Custom Functional Interfaces:
+You can define your own custom functional interfaces by annotating an interface with the @FunctionalInterface annotation. While the annotation is not strictly required, it serves as a marker to indicate that the interface is intended to be a functional interface. The compiler enforces the presence of a single abstract method within an interface annotated with @FunctionalInterface.
+
+Functional interfaces provide the foundation for functional programming in Java, allowing behavior to be treated as a first-class citizen. They promote the use of lambda expressions and method references, enabling more expressive and concise code. By leveraging functional interfaces, you can write code that is more modular, reusable, and adheres to functional programming principles.
+
+@FunctionalInterface
+interface Calculator {
+    int calculate(int a, int b);
+}
+
+public class FunctionalInterfaceExample {
+    public static void main(String[] args) {
+        Calculator add = (a, b) -> a + b;
+        Calculator subtract = (a, b) -> a - b;
+        Calculator multiply = (a, b) -> a * b;
+
+        int result1 = add.calculate(5, 3);
+        int result2 = subtract.calculate(10, 7);
+        int result3 = multiply.calculate(4, 6);
+
+        System.out.println("Addition: " + result1);
+        System.out.println("Subtraction: " + result2);
+        System.out.println("Multiplication: " + result3);
+    }
+}
+
+In this example, we define a functional interface called Calculator with a single abstract method calculate. We annotate the interface with @FunctionalInterface to indicate that it is intended to be a functional interface.
+
+We then create lambda expressions to implement the calculate method for different calculations: addition, subtraction, and multiplication. Each lambda expression takes two integers as parameters and performs the corresponding operation.
+
+In the main method, we create instances of the Calculator functional interface using lambda expressions. We invoke the calculate method on each instance to perform the respective calculation. The results are then printed to the console.
+
+This example demonstrates how a functional interface allows us to define different behaviors using lambda expressions. It showcases the flexibility and conciseness that functional programming brings to Java.

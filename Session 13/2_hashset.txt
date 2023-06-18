@@ -1,0 +1,60 @@
+HashSet is an implementation of the Set interface in the Java Collections Framework. It represents an unordered collection of unique elements, where duplicate elements are not allowed. HashSet uses a hash table to store and retrieve elements efficiently. Here's a detailed explanation of HashSet:
+
+Uniqueness of Elements:
+
+HashSet does not allow duplicate elements. If an element is added to a HashSet and it is already present, the HashSet ignores the addition and does not modify its contents.
+Hashing and Hash Functions:
+
+HashSet uses a hash table data structure to store elements.
+Each element is stored based on its hash code, which is obtained by invoking the hashCode() method of the element.
+A hash function is used to map the hash code to an index within the hash table, determining the bucket where the element will be stored.
+HashSet uses the hash code and equals method of elements to determine uniqueness and to check for duplicate elements efficiently.
+Insertion, Deletion, and Retrieval:
+
+Adding an element to a HashSet is done by invoking the add(E e) method, where e is the element to be added.
+Removing an element is done using the remove(Object o) method, where o is the object to be removed.
+The contains(Object o) method checks if an element is present in the HashSet.
+These operations have an average time complexity of O(1) due to the efficient hashing and hash table implementation.
+Iteration and Ordering:
+
+HashSet does not guarantee the order of elements. The iteration order may change when elements are added or removed from the set.
+To iterate over the elements, you can use an iterator obtained by invoking the iterator() method.
+Null Elements:
+
+HashSet allows null elements. You can add a null element to a HashSet, and it will be treated as a unique element.
+Performance:
+
+HashSet provides constant-time performance for the basic operations (add, remove, contains) on average.
+The performance depends on the quality of the hash function and the load factor of the HashSet.
+The load factor represents the ratio of the number of elements to the capacity of the HashSet. When the load factor exceeds a threshold, the HashSet is automatically resized to maintain performance.
+HashSet Class Hierarchy:
+
+HashSet extends the AbstractSet class and implements the Set interface.
+It also implements the Serializable and Cloneable interfaces, allowing it to be serialized and cloned.
+Here's an example demonstrating the usage of HashSet:
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        Set<String> names = new HashSet<>();
+
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+        names.add("Alice");  // Ignored (duplicate)
+
+        System.out.println(names);  // Output: [Charlie, Alice, Bob]
+
+        names.remove("Bob");
+        System.out.println(names);  // Output: [Charlie, Alice]
+
+        System.out.println(names.contains("Alice"));  // Output: true
+    }
+}
+
+
+In this example, we create a HashSet of names, add elements, demonstrate that duplicate elements are ignored, remove an element, and check for membership. The order of elements in the output may vary due to the unordered nature of HashSet.
+
+HashSet provides an efficient way to store and manipulate collections of unique elements. It is widely used when you need fast element lookup and uniqueness guarantees.

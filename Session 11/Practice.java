@@ -17,6 +17,9 @@ class Practice {
         al.add(15);
         al.add(20);
         al.add(25);
+        al.add(2);
+        al.add(7);
+        al.add(1);
         System.out.println(al);
 
         // System.out.println(al.size());
@@ -44,13 +47,17 @@ class Practice {
         // System.out.println(al.subList(0, 2));
 
 
-        ArrayList<Integer> al2 = new ArrayList<>();
-        al2.add(50);
-        al2.add(100);
-        al2.add(200);
-        System.out.println(al2);
-        al2.addAll(0, al);
-        System.out.println(al2);
+        // ArrayList<Integer> al2 = new ArrayList<>();
+        // al2.add(50);
+        // al2.add(100);
+        // al2.add(200);
+        // System.out.println(al2);
+        // al2.addAll(0, al);
+        // System.out.println(al2);
+
+
+        // Collections.sort(al);
+        // System.out.println(al);
 
     }
 }

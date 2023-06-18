@@ -1,0 +1,71 @@
+In Java, the Comparator interface is used to define custom comparison logic for classes that don't implement the Comparable interface or when you want to define alternative comparison criteria. The Comparator interface provides a way to compare objects based on specific attributes or rules that you define.
+
+The Comparator interface contains two methods:
+
+int compare(T obj1, T obj2)
+boolean equals(Object obj)
+
+The compare method compares two objects, obj1 and obj2, and returns an integer value indicating the comparison result. The return value can have the following meanings:
+
+A negative integer: obj1 is less than obj2.
+Zero: obj1 is equal to obj2.
+A positive integer: obj1 is greater than obj2.
+The equals method is used to check whether the current Comparator object is equal to another object.
+
+To use a Comparator, you need to create a class that implements the Comparator interface and override the compare method. Here's an example:
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+class AgeComparator implements Comparator<Person> {
+    @Override
+    public int compare(Person p1, Person p2) {
+        return Integer.compare(p1.getAge(), p2.getAge());
+    }
+}
+
+public class ComparatorExample {
+    public static void main(String[] args) {
+        List<Person> people = new ArrayList<>();
+        people.add(new Person("Alice", 25));
+        people.add(new Person("Bob", 30));
+        people.add(new Person("Charlie", 20));
+
+        System.out.println("Before sorting:");
+        for (Person person : people) {
+            System.out.println(person.getName() + ", " + person.getAge());
+        }
+
+        AgeComparator comparator = new AgeComparator();
+        Collections.sort(people, comparator);
+
+        System.out.println("After sorting by age:");
+        for (Person person : people) {
+            System.out.println(person.getName() + ", " + person.getAge());
+        }
+    }
+}
+
+In this example, the Person class doesn't implement Comparable, so we create a separate class AgeComparator that implements the Comparator<Person> interface. The AgeComparator class overrides the compare method to compare persons based on their age. By passing an instance of AgeComparator to Collections.sort(), we sort the list of Person objects based on the custom comparison logic defined in the AgeComparator class.
+
+Using the Comparator interface, you can define multiple comparison criteria or use different sorting rules for objects that don't have a natural ordering. It provides flexibility to sort or order objects based on various attributes or rules specified by your custom Comparator implementations.

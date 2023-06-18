@@ -1,0 +1,52 @@
+Lambda expressions are a feature introduced in Java 8 that allows you to write more concise and expressive code by providing a way to represent anonymous functions. A lambda expression is a compact block of code that can be used as a parameter for methods or assigned to functional interfaces.
+
+Here are some key points about lambda expressions:
+
+Syntax:
+The syntax of a lambda expression consists of three parts:
+
+Parameter list: Enclosed in parentheses, representing the input parameters of the anonymous function.
+Arrow token: Consists of a hyphen and a greater-than sign (->), separating the parameter list from the body of the lambda expression.
+Body: Contains the code to be executed when the lambda expression is invoked.
+Functional Interfaces:
+Lambda expressions are primarily used with functional interfaces, which are interfaces that have a single abstract method. Java provides a set of predefined functional interfaces in the java.util.function package, such as Predicate, Consumer, Function, etc. These interfaces serve as the target types for lambda expressions.
+
+Target Types:
+The context in which a lambda expression is used determines its target type. The target type is the functional interface to which the lambda expression is assigned or passed as an argument. The lambda expression should be compatible with the abstract method of the target type.
+
+Single Abstract Method (SAM) Interfaces:
+SAM interfaces are interfaces that have only one abstract method. They are also known as functional interfaces. Lambda expressions can be used as a concise way to provide an implementation of the abstract method of a SAM interface.
+
+Benefits:
+Lambda expressions provide several benefits, including:
+
+Concise code: Lambda expressions allow you to write more compact code by reducing boilerplate code.
+Readability: They enhance code readability by focusing on the essential logic and eliminating unnecessary details.
+Flexibility: Lambda expressions enable the implementation of functional programming concepts, such as passing behavior as a parameter and supporting functional composition.
+Enhanced APIs: They facilitate the development of APIs that can accept behavior as parameters, making code more flexible and extensible.
+Here's an example to illustrate the usage of lambda expressions:
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+        names.add("David");
+
+        // Using lambda expression to sort the list
+        names.sort((s1, s2) -> s1.compareTo(s2));
+
+        // Using lambda expression to iterate and print the list
+        names.forEach(name -> System.out.println(name));
+    }
+}
+
+In this example, a lambda expression is used as the parameter for the sort method of the List interface. The lambda expression (s1, s2) -> s1.compareTo(s2) defines a comparison logic for sorting the list of names. It compares two strings s1 and s2 using the compareTo method. The lambda expression is compatible with the Comparator functional interface, which is the target type for the sort method.
+
+Additionally, a lambda expression name -> System.out.println(name) is used with the forEach method to iterate over the list and print each name. The lambda expression is compatible with the Consumer functional interface, which is the target type for the forEach method.
+
+Lambda expressions provide a concise and expressive way to write code in Java, particularly when working with functional interfaces and operations that involve passing behavior as parameters. They facilitate the adoption of functional programming concepts and improve the readability and maintainability of your code.

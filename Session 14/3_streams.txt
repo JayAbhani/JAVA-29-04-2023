@@ -1,0 +1,50 @@
+Streams are a powerful feature introduced in Java 8 that provide a declarative and functional approach to processing collections of data. A stream represents a sequence of elements and supports various operations to perform computations on those elements.
+
+Here are some key points about streams:
+
+Collection Processing:
+Streams are designed to process collections of data, such as arrays or lists. They allow you to perform aggregate operations on the elements of a collection, such as filtering, mapping, sorting, and reducing.
+
+Functional Programming:
+Streams are based on functional programming principles. They promote immutability, laziness, and parallelism. Stream operations are expressed as lambda expressions, enabling a concise and expressive coding style.
+
+Pipelining:
+Stream operations can be chained together to form a pipeline of operations. This allows you to perform complex computations by combining multiple operations, resulting in more readable and maintainable code.
+
+Intermediate and Terminal Operations:
+Stream operations are divided into two categories:
+
+Intermediate operations: These operations transform the stream into another stream. Examples include filter, map, distinct, sorted, and limit.
+Terminal operations: These operations produce a result or a side-effect. Examples include forEach, collect, count, min, max, and reduce. Terminal operations are typically used to consume or process the elements of a stream.
+Lazy Evaluation:
+Stream operations are evaluated lazily, meaning that they are only executed when necessary. Intermediate operations are typically lazy, allowing for short-circuiting and improved performance.
+
+Parallelism:
+Streams can be executed in parallel by leveraging the inherent parallel processing capabilities of modern multi-core processors. Parallel streams can enhance performance for computationally intensive tasks on large data sets.
+
+Stream Sources:
+Streams can be created from various sources, including collections, arrays, input/output channels, and generator functions. The Stream interface provides factory methods, such as stream() and parallelStream(), to create streams from different sources.
+
+Here's an example to illustrate the usage of streams:
+
+import java.util.Arrays;
+import java.util.List;
+
+public class StreamExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        int sum = numbers.stream()
+                .filter(n -> n % 2 == 0)     // Keep only even numbers
+                .mapToInt(n -> n * 2)        // Double each number
+                .sum();                      // Calculate the sum
+
+        System.out.println("Sum of doubled even numbers: " + sum);
+    }
+}
+
+In this example, we start with a list of integers called numbers. We create a stream from the list using the stream() method. We then apply a series of operations on the stream: filtering for even numbers using filter, doubling each number using mapToInt, and finally calculating the sum using sum.
+
+The operations in the stream pipeline are evaluated lazily and executed only when the terminal operation (sum in this case) is invoked. This allows for efficient processing of large data sets, as only the necessary elements are processed.
+
+Streams provide a more expressive and concise way to manipulate and process collections of data in Java. They promote a functional programming style and enable you to write code that is easier to read, understand, and maintain. Additionally, streams can take advantage of parallel processing to improve performance for certain types of computations.

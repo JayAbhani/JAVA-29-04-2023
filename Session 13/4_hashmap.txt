@@ -1,0 +1,60 @@
+HashMap is an implementation of the Map interface in the Java Collections Framework. It provides a hash table-based data structure that allows efficient storage and retrieval of key-value pairs. HashMap uses a technique called hashing to store elements and provides a fast and constant-time performance for basic operations. Let's explore HashMap in detail:
+
+Key-Value Pairs:
+
+HashMap stores data as key-value pairs, where each key is unique and maps to a corresponding value.
+Keys are used to access values in the HashMap. Each key can be associated with at most one value.
+The key and value can be of any object type, but they must override the equals() and hashCode() methods to ensure proper functioning.
+Hashing and Hash Functions:
+
+HashMap uses hashing to store and retrieve elements efficiently.
+When a key-value pair is added to the HashMap, the hash code of the key is computed using the hashCode() method.
+A hash function is applied to the hash code to determine the index or bucket where the key-value pair will be stored.
+The hash function distributes the key-value pairs evenly across the buckets, reducing collisions (multiple elements with the same hash code).
+Insertion, Deletion, and Retrieval:
+
+Adding a key-value pair to a HashMap is done using the put(K key, V value) method, where key is the key and value is the corresponding value.
+Removing a key-value pair is done using the remove(Object key) method, where key is the key to be removed.
+Retrieving the value associated with a key is done using the get(Object key) method, which returns the value or null if the key is not present.
+These operations have an average time complexity of O(1) (constant time) due to the efficient hashing and hash table implementation.
+Null Keys and Values:
+
+HashMap allows null keys and null values. You can have at most one null key in a HashMap, and multiple null values.
+Iteration and Ordering:
+
+HashMap does not guarantee the order of key-value pairs. The iteration order may change when elements are added or removed from the map.
+To iterate over the key-value pairs, you can use an iterator obtained by invoking the entrySet().iterator() method.
+Performance:
+
+HashMap provides constant-time performance for basic operations (put, get, remove) on average.
+The actual performance depends on the quality of the hash function, the load factor, and the initial capacity of the HashMap.
+The load factor represents the ratio of the number of elements to the capacity of the HashMap. When the load factor exceeds a threshold, the HashMap is automatically resized to maintain performance.
+HashMap Class Hierarchy:
+
+HashMap extends the AbstractMap class and implements the Map interface.
+It also implements the Serializable and Cloneable interfaces, allowing it to be serialized and cloned.
+Here's an example demonstrating the usage of HashMap:
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        Map<String, Integer> scores = new HashMap<>();
+
+        scores.put("Alice", 95);
+        scores.put("Bob", 80);
+        scores.put("Charlie", 75);
+
+        System.out.println(scores.get("Alice"));  // Output: 95
+
+        scores.remove("Bob");
+        System.out.println(scores.containsKey("Bob"));  // Output: false
+
+        System.out.println(scores.size());  // Output: 2
+    }
+}
+
+In this example, we create a HashMap to store scores as key-value pairs. We add elements, retrieve the value associated with a key, remove an entry, and check for key existence and map size.
+
+HashMap is widely used in various applications where fast and efficient key-value lookups are required. It provides a flexible and efficient way to store and retrieve data based on unique keys.
